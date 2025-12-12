@@ -3,17 +3,15 @@ import { ServerEvent, EventRequest, UserData } from 'facebook-nodejs-business-sd
 const ACCESS_TOKEN = process.env.META_ACCESS_TOKEN;
 const PIXEL_B_ID = process.env.META_PIXEL_B_ID || '1572408953943015';
 
-// Enable CORS
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
-
 export default async function handler(req, res) {
+  // Set CORS headers for ALL responses
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
   // Handle preflight
   if (req.method === 'OPTIONS') {
-    return res.status(200).setHeader('Access-Control-Allow-Origin', '*').end();
+    return res.status(200).end();
   }
 
   // Only accept POST
@@ -28,7 +26,7 @@ export default async function handler(req, res) {
 
   try {
     const {
-      eventName = 'SubmitApplication',
+      eventName = 'CompleteRegistration',
       eventSourceUrl,
       fbp,
       fbc,
