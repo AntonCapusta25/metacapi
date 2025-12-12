@@ -1,0 +1,19 @@
+{
+  "name": "meta-capi-bridge",
+  "version": "1.0.0",
+  "description": "Meta Conversions API bridge for cross-domain tracking",
+  "main": "api/meta-capi.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel"
+  },
+  "dependencies": {
+    "facebook-nodejs-business-sdk": "^19.0.0"
+  },
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}

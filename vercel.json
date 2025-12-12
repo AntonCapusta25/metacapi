@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "env": {
+    "META_ACCESS_TOKEN": "@meta-access-token",
+    "META_PIXEL_B_ID": "1572408953943015"
+  }
+}
